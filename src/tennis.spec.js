@@ -15,6 +15,14 @@ describe('Score to the game', () => {
     });
 
     test('If some player made a point, score increases for the player', () => {
-        expect(getScore(3, 3)).toBe('40 - 40');
+        expect(getScore(3, 2)).toBe('40 - 30');
+    });
+
+    test('If two players have the same score since 3 - 3, return Deuce', () => {
+        expect(getScore(3, 3)).toBe('Deuce');
+    });
+
+    test('If two players have the same score since 3 - 3, return Deuce', () => {
+        expect(getScore(5, 5)).toBe('Deuce');
     });
 });
