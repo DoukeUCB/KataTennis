@@ -1,15 +1,15 @@
-import sumar from "./sumador";
+import getScore from "./tennis";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
+const playerOneScoreInput = document.querySelector("#first-score");
+const playerTwoScoreInput = document.querySelector("#second-score");
 const form = document.querySelector("#form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
+  const playerOneScore = Number.parseInt(playerOneScoreInput.value);
+  const playerTwoScore = Number.parseInt(playerTwoScoreInput.value);
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  div.innerHTML = "<p>" + getScore(playerOneScore, playerTwoScore) + "</p>";
 });
